@@ -152,7 +152,7 @@ def mine_block(k, prev_hash, rand_lines):
     
     while True:
         # TODO your code to find a nonce here
-        nonce = str(nonce).encode('utf-8')
+        nonce_datta = str(nonce).encode('utf-8')
         cluster = data_string + nonce_data
         hash_output = hashlib.sha256(cluster).hexdigest()
         bin_hash = bin(int(hash_output, 16))[2:].zfill(256)
@@ -162,8 +162,8 @@ def mine_block(k, prev_hash, rand_lines):
         
         nonce += 1
 
-    assert isinstance(nonce, bytes), 'nonce should be of type bytes'
-    return nonce
+    assert isinstance(nonce_data, bytes), 'nonce should be of type bytes'
+    return nonce_data
 
 
 def get_random_lines(filename, quantity):
