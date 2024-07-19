@@ -152,7 +152,7 @@ def mine_block(k, prev_hash, rand_lines):
     
     while True:
         # TODO your code to find a nonce here
-        nonce_datta = str(nonce).encode('utf-8')
+        nonce_data = str(nonce).encode('utf-8')
         cluster = data_string + nonce_data
         hash_output = hashlib.sha256(cluster).hexdigest()
         bin_hash = bin(int(hash_output, 16))[2:].zfill(256)
